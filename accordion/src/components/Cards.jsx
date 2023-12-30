@@ -1,6 +1,7 @@
-const Card = ({ title, description, index, selected, setIndexi }) => {
+const Card = ({ title, description, indexi, index, selected, setIndexi }) => {
   const handling = () => {
-    setIndexi(index);
+    setIndexi(index === indexi ? null : index);
+    // handling the case for single selection where on clicking the same card again, it closes
   };
   return (
     <>

@@ -44,6 +44,7 @@ const Container = () => {
                 description={i.description}
                 key={i.title}
                 index={index}
+                indexi={indexi}
                 selected={indexi === index}
                 setIndexi={setIndexi}
               />
