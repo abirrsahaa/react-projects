@@ -24,7 +24,7 @@ const Navbar = ({ search, setsearch, getting }) => {
   ];
 
   return (
-    <header className=" w-full h-24 border-black border-2 border-solid p-1  block">
+    <header className=" w-full h-24  p-1  block">
       <nav className="w-full h-24 flex justify-between items-center ">
         <div>
           <h1>FoodRecipe</h1>

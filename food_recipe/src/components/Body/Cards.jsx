@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Card = ({ data }) => {
   console.log("data", data);
@@ -9,12 +10,14 @@ const Card = ({ data }) => {
           <img src={data.image_url} className="w-full h-full rounded-xl" />
         </div>
         <div className="w-full my-2">
-          <span>{data.publisher}</span>
+          <span className="text-blue-500 font-bold text-sm">
+            {data.publisher}
+          </span>
           <br />
-          <h1>{data.title}</h1>
+          <h1 className="font-bold text-xl">{data.title}</h1>
         </div>
-        <button className=" absolute bottom-0 left-0   w-[50%] text-left">
-          button
+        <button className=" absolute bottom-0 left-0   w-[50%] h-[12%] text-white text-xs  bg-black rounded-lg text-center border-2 border-black border-solid">
+          <Link to={`/${data.id}`}>RECIPE DETAILS</Link>
         </button>
       </div>
     </div>

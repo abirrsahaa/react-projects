@@ -7,6 +7,7 @@ import Layout from "./Layout.jsx";
 import Home from "./components/Body/Home.jsx";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
+import Recipe from "./components/Body/Recipe.jsx";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,10 @@ const router = createBrowserRouter([
       {
         path: "",
         element: <Home />,
+      },
+      {
+        path: ":id",
+        element: <Recipe />,
       },
     ],
   },
