@@ -1,5 +1,6 @@
 import React, { memo } from "react";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = ({ search, setsearch, getting }) => {
   // here i will be having optimization issues as it will result in multiple render of the navbar
@@ -11,6 +12,8 @@ const Navbar = ({ search, setsearch, getting }) => {
   // as by pushing down the state i will be getting my work done but will cause huge optimization issues
 
   // this is the thing i need to focus on after building the whole project but for now lets stick to it!
+
+  const list = useSelector((store) => store.fav.all);
 
   const navitems = [
     {
@@ -27,7 +30,9 @@ const Navbar = ({ search, setsearch, getting }) => {
     <header className=" w-full h-24  p-1  block">
       <nav className="w-full h-24 flex justify-between items-center ">
         <div>
-          <h1>FoodRecipe</h1>
+          <NavLink to={"/"}>
+            <h1>FoodRecipe</h1>
+          </NavLink>
         </div>
         <input
           type="search"
@@ -40,7 +45,9 @@ const Navbar = ({ search, setsearch, getting }) => {
         <ul className="flex gap-2 m-3">
           {navitems.map((item, index) => (
             <li key={index}>
-              <NavLink to={item.path}>{item.title}</NavLink>
+              <NavLink to={item.path} className="flex flex-col">
+                {item.title} {item.title === "Favourites" ? list.length : null}
+              </NavLink>
             </li>
           ))}
         </ul>
