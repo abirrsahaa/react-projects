@@ -10,7 +10,7 @@ function App() {
 
   const finding = async () => {
     const octokit = new Octokit({
-      auth: "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",
+      auth: "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",
     });
 
     const response = await octokit.request(`GET /users/${profile}`, {
